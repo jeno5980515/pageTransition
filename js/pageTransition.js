@@ -7,20 +7,22 @@
 	var width , height ;
 	var newIndex = 0 ;
 	var isTran = false ;
+	var container ;
 
 	var PageTransition = function(el){
 		this.init(el);
 	}
 
 	PageTransition.prototype.init = function(el){
-		document.getElementById('container').style.overflow = "hidden" ;
-		//document.getElementById('container').style.transformStyle = "preserve-3d";
-		list = document.getElementById('container').querySelectorAll(".page") ;
+		container = document.getElementById(el) ;
+		container.style.overflow = "hidden" ;
+		//container.style.transformStyle = "preserve-3d";
+		list = document.getElementById(el).querySelectorAll(".page") ;
 		for ( var i = 0 ; i < list.length ; i ++ ){
 			mapList.push(i) ;
 		}
-		width = document.getElementById('container').clientWidth ;
-		height = document.getElementById('container').clientHeight ;
+		width = container.clientWidth ;
+		height = container.clientHeight ;
 		for ( var i = 0 ; i < list.length ; i ++ ){
 			list[i].style.width = width + "px" ;
 			list[i].style.height = height + "px" ;
@@ -47,8 +49,8 @@
 	}
 
 	var reorderList = function(){
-		swapElements(document.getElementById('container').querySelectorAll(".page")[nowIndex],document.getElementById('container').querySelectorAll(".page")[newIndex]);
-		list = document.getElementById('container').querySelectorAll(".page") ;
+		swapElements(container.querySelectorAll(".page")[nowIndex],container.querySelectorAll(".page")[newIndex]);
+		list = container.querySelectorAll(".page") ;
 		var temp = mapList[nowIndex] ;
 		mapList[nowIndex] = mapList[newIndex] ;
 		mapList[newIndex] = temp ;
