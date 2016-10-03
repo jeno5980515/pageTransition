@@ -139,7 +139,9 @@
 		    default:
 		        console.log("error type");
 		}
-		callback();
+		if ( callback instanceof Function ){
+			callback();
+		}
 	}
 
 	window.PageTransition = PageTransition ;
