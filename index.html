@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<style>
+	#container{
+		border: 1px solid black ;
+		width : 400px;
+		height: 300px;
+	}
+	.page{
+		background-color: white ;
+		text-align: center;
+		border: 1px solid black;
+	}
+	.text{
+		width: 100%;
+    	padding-top: 35%;
+	}
+</style>
+Page Transition Demo !
+<div id="container">
+	<div class="page">
+		<div class="text">First Page</div>
+		<button id="changeButton1">Change Page</button>
+	</div>
+	<div class="page">
+		<div class="text">Second Page</div>
+		<button id="changeButton2">Change Page</button>
+	</div>
+	<div class="page">
+		<div class="text">Third Page</div>
+		<button id="changeButton3">Change Page</button>
+	</div>
+	<div class="page">
+		<div class="text">Fourth Page</div>
+		<button id="changeButton4">Change Page</button>
+	</div>
+	<div class="page">
+		<div class="text">Fifth Page</div>
+		<button id="changeButton5">Change Page</button>
+	</div>
+</div>
+</body>
+<script src="js/pageTransition.js"></script>
+<script>
+	var pages = new PageTransition("container");
+	var typeList = ["moveInUpLinear","moveOutDownLinear","moveInLeftLinear","moveOutLeftLinear"] ;
+	var index = 0 ;
+	document.getElementById("changeButton1").addEventListener("click",function(){
+		pages.changePage({
+			page : 1 ,
+			type : typeList[index] 
+		});
+		index ++ ;
+		if ( index >= typeList.length ){
+			index = 0 ;
+		}
+	})
+	document.getElementById("changeButton2").addEventListener("click",function(){
+		pages.changePage({
+			page : 2 ,
+			type : typeList[index] 
+		});		
+		index ++ ;
+		if ( index >= typeList.length ){
+			index = 0 ;
+		}
+	})
+	document.getElementById("changeButton3").addEventListener("click",function(){
+		pages.changePage({
+			page : 3 ,
+			type : typeList[index] 
+		});
+		index ++ ;
+		if ( index >= typeList.length ){
+			index = 0 ;
+		}
+	})
+	document.getElementById("changeButton4").addEventListener("click",function(){
+		pages.changePage({
+			page : 4 ,
+			type : typeList[index]  
+		});
+		index ++ ;
+		if ( index >= typeList.length ){
+			index = 0 ;
+		}
+	})
+	document.getElementById("changeButton5").addEventListener("click",function(){
+		pages.changePage({
+			page : 0 ,
+			type : typeList[index] 
+		});
+		index ++ ;
+		if ( index >= typeList.length ){
+			index = 0 ;
+		}
+	})
+</script>
+</html>
