@@ -81,7 +81,7 @@
 		if ( isTran ){
 			return ;
 		} 
-		isTran = false ;
+		isTran = true ;
 		newIndex = mapList.indexOf(data.page) ;
 		if ( nowIndex === newIndex ){
 			console.log("same index") ;
