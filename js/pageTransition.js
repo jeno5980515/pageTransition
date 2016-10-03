@@ -77,7 +77,7 @@
 		list[nowIndex].addEventListener("transitionend", endFunction);
 	}
 
-	PageTransition.prototype.changePage = function(data){
+	PageTransition.prototype.changePage = function(data,callback){
 		if ( isTran ){
 			return ;
 		} 
@@ -139,6 +139,7 @@
 		    default:
 		        console.log("error type");
 		}
+		callback();
 	}
 
 	window.PageTransition = PageTransition ;

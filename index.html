@@ -50,51 +50,56 @@ Page Transition Demo !
 		pages.changePage({
 			page : 1 ,
 			type : typeList[index] 
+		},function(){
+			index ++ ;
+			if ( index >= typeList.length ){
+				index = 0 ;
+			}
 		});
-		index ++ ;
-		if ( index >= typeList.length ){
-			index = 0 ;
-		}
 	})
 	document.getElementById("changeButton2").addEventListener("click",function(){
 		pages.changePage({
 			page : 2 ,
 			type : typeList[index] 
-		});		
-		index ++ ;
-		if ( index >= typeList.length ){
-			index = 0 ;
-		}
+		},function(){
+			index ++ ;
+			if ( index >= typeList.length ){
+				index = 0 ;
+			}
+		});
 	})
 	document.getElementById("changeButton3").addEventListener("click",function(){
 		pages.changePage({
 			page : 3 ,
 			type : typeList[index] 
+		},function(){
+			index ++ ;
+			if ( index >= typeList.length ){
+				index = 0 ;
+			}
 		});
-		index ++ ;
-		if ( index >= typeList.length ){
-			index = 0 ;
-		}
 	})
 	document.getElementById("changeButton4").addEventListener("click",function(){
 		pages.changePage({
 			page : 4 ,
 			type : typeList[index]  
+		},function(){
+			index ++ ;
+			if ( index >= typeList.length ){
+				index = 0 ;
+			}
 		});
-		index ++ ;
-		if ( index >= typeList.length ){
-			index = 0 ;
-		}
 	})
 	document.getElementById("changeButton5").addEventListener("click",function(){
 		pages.changePage({
 			page : 0 ,
 			type : typeList[index] 
+		},function(){
+			index ++ ;
+			if ( index >= typeList.length ){
+				index = 0 ;
+			}
 		});
-		index ++ ;
-		if ( index >= typeList.length ){
-			index = 0 ;
-		}
 	})
 </script>
 </html>
