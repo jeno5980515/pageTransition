@@ -6,6 +6,7 @@
 	var nowIndex = 0 ;
 	var width , height ;
 	var newIndex = 0 ;
+	var isTran = false ;
 
 	var PageTransition = function(el){
 		this.init(el);
@@ -65,6 +66,7 @@
 	    list[nowIndex].removeEventListener("webkitTransitionEnd", endFunction);
 		list[nowIndex].removeEventListener("transitionend", endFunction);
     	nowIndex = newIndex ;
+    	isTran = false ;
 
 	}
 
@@ -76,6 +78,10 @@
 	}
 
 	PageTransition.prototype.changePage = function(data){
+		if ( isTran ){
+			return ;
+		} 
+		isTran = false ;
 		newIndex = mapList.indexOf(data.page) ;
 		if ( nowIndex === newIndex ){
 			console.log("same index") ;
